@@ -1,11 +1,11 @@
 import React from 'react';
 import { Tab } from '@ya.praktikum/react-developer-burger-ui-components';
-import burgerIngredientsTabsStyles from './burger-ingredients-tabs.module.css';
+import ingredientsTabsStyles from './ingredients-tabs.module.css';
 
-function BurgerIngredientsTabs() {
+function IngredientsTabs() {
   const [current, setCurrent] = React.useState('Булки');
   return (
-    <div className={`mb-10 ${burgerIngredientsTabsStyles.wrapper}`}>
+    <div className={`mb-10 ${ingredientsTabsStyles.wrapper}`}>
       <Tab value="Булки" active={current === 'Булки'} onClick={setCurrent}>
         Булки
       </Tab>
@@ -19,4 +19,4 @@ function BurgerIngredientsTabs() {
   );
 }
 
-export default BurgerIngredientsTabs;
+export default IngredientsTabs;

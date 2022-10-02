@@ -12,7 +12,7 @@ function App() {
       <AppHeader />
       <AppMain>
         <BurgerIngredients ingredients={ingredientsData}/>
-        <BurgerConstructor />
+        <BurgerConstructor ingredients={ingredientsData}/>
       </AppMain>
     </div>
   );

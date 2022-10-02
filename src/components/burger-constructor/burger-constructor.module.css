@@ -1,3 +1,53 @@
-.burgerConstructor {
+.section {
   width: 600px;
+}
+
+.list {
+  max-height: 465px;
+  margin: 16px 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  overflow-y: scroll;
+}
+
+.list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.list::-webkit-scrollbar-thumb {
+  background-color: #8585AD;
+  border: 3px solid #8585AD;
+}
+
+.list::-webkit-scrollbar-track {
+  width: 8px;
+  background-color: #2F2F37;
+}
+
+
+.item {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+}
+
+.order {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.total {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 12px;
+}
+
+.total svg {
+  width: 36px;
+  height: 36px;
 }
