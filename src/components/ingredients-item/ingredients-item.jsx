@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ingredientPropTypes } from '../../utils/ingredientPropTypes';
 import {
   Counter,
   CurrencyIcon,
@@ -28,7 +27,9 @@ function IngredientsItem({ name, image, price }) {
 }
 
 IngredientsItem.propTypes = {
-  ingredients: PropTypes.arrayOf(ingredientPropTypes).isRequired
+  name: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired
 }
 
 export default IngredientsItem;

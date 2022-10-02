@@ -6,7 +6,7 @@ function ProfileLink() {
   return (
     <a
       className={`text text_type_main-default pt-4 pb-4 pl-5 pr-5 ${profileLinkStyles.link}`}
-      href
+      href='#root'
     >
       <ProfileIcon type="secondary" />
       Личный кабинет

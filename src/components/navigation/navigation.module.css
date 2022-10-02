@@ -10,6 +10,7 @@
   align-items: center;
   color: #8585AD;
   cursor: pointer;
+  text-decoration: none;
   transition: color 600ms;
 }
 

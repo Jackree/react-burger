@@ -25,7 +25,7 @@ function BurgerConstructor(props) {
         <ul className={burgerConstructorStyles.list}>
           {props.ingredients.map((item) => {
             return (
-              <li className={`ml-4 ${burgerConstructorStyles.item}`}>
+              <li className={`ml-4 ${burgerConstructorStyles.item}`} key={item._id}>
                 <DragIcon />
                 <ConstructorElement
                   text={item.name}
@@ -51,7 +51,7 @@ function BurgerConstructor(props) {
           610
           <CurrencyIcon type="primary" />
         </p>
-        <Button type="primary" size="large">
+        <Button type="primary" size="large" htmlType='button'>
           Оформить заказ
         </Button>
       </div>
