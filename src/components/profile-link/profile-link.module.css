@@ -1,0 +1,27 @@
+.link {
+  display: flex;
+  align-items: center;
+  color: #8585AD;
+  text-decoration: none;
+  transition: color 600ms;
+  cursor: pointer;
+}
+
+.link svg {
+  margin-right: 8px;
+  transition: fill 600ms;
+}
+
+.link:hover,
+.link:focus {
+  color: #F2F2F3;
+}
+
+.link:hover svg,
+.link:focus svg {
+  fill: #F2F2F3;
+}
+
+.active {
+  color: #F2F2F3;
+}

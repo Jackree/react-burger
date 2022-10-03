@@ -1,0 +1,17 @@
+.item {
+  display: flex;
+  flex-direction: column;
+  width: 272px;
+  min-height: 208px;
+  position: relative;
+}
+
+.price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.price svg {
+  margin-left: 8px;
+}
