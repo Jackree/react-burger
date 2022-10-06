@@ -1,0 +1,38 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.name {
+  text-align: center;
+}
+
+.image {
+  display: flex;
+  max-width: 480px;
+}
+
+.list {
+  display: flex;
+  justify-content: center;
+  column-gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  min-width: 120px;
+}
+
+.item_name {
+  margin: 0 0 8px 0;
+  text-align: center;
+}
+
+.item_value {
+  margin: 0;
+  text-align: center;
+}

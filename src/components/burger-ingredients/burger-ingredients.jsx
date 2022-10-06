@@ -5,7 +5,7 @@ import IngredientsList from '../ingredients-list/ingredients-list';
 import IngredientsTabs from '../ingredients-tabs/ingredients-tabs';
 import burgerIngredientsStyles from './burger-ingredients.module.css';
 
-function BurgerIngredients(props) {
+function BurgerIngredients({ ingredients }) {
   return (
     <section className={burgerIngredientsStyles.burgerIngredients}>
       <h1
@@ -14,13 +14,13 @@ function BurgerIngredients(props) {
         Соберите бургер
       </h1>
       <IngredientsTabs />
-      <IngredientsList ingredients={props.ingredients}/>
+      <IngredientsList ingredients={ingredients} />
     </section>
   );
 }
 
 BurgerIngredients.propTypes = {
-  ingredients: PropTypes.arrayOf(ingredientPropTypes).isRequired
-}
+  ingredients: PropTypes.arrayOf(ingredientPropTypes).isRequired,
+};
 
 export default BurgerIngredients;
