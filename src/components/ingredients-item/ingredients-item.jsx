@@ -25,7 +25,7 @@ function IngredientsItem(props) {
         <Counter count={1} size="default" />
         <img className="pl-4 pr-4" src={props.image} alt={props.name} />
         <p
-          className={`${ingredientsItemStyles.price} text text_type_digits-default mt-1 mb-1`}
+          className={`${ingredientsItemStyles.price} text text_type_digits-default mt-1 mb-2`}
         >
           {props.price}
           <CurrencyIcon type="primary" />

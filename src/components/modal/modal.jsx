@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback } from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import ModalOverlay from '../modal-overlay/modal-overlay';
@@ -8,29 +8,23 @@ import modalStyles from './modal.module.css';
 const modalRoot = document.getElementById('modal');
 
 function Modal({ children, title = '', closeModal }) {
-  const closeHandler = useCallback(() => {
-    closeModal();
-  }, [closeModal]);
-
-  const keyDownHandler = useCallback(
-    (e) => {
-      if (e.key === 'Escape') {
-        closeHandler();
-      }
-    },
-    [closeHandler]
-  );
-
   useEffect(() => {
+    const keyDownHandler = (e) => {
+      if (e.key === 'Escape') {
+        closeModal();
+      }
+    };
+
     document.addEventListener('keydown', keyDownHandler);
 
     return () => {
       document.removeEventListener('keydown', keyDownHandler);
     };
-  }, [keyDownHandler]);
-  return ReactDOM.createPortal(
+  }, [closeModal]);
+
+  const modalElement = (
     <div className={modalStyles.wrapper}>
-      <ModalOverlay closeModal={closeModal}></ModalOverlay>
+      <ModalOverlay closeModal={closeModal} />
       <div className={`p-10 ${modalStyles.modal}`}>
         <div className={modalStyles.header}>
           {title && (
@@ -38,15 +32,16 @@ function Modal({ children, title = '', closeModal }) {
               {title}
             </h2>
           )}
-          <div className={modalStyles.close} onClick={closeHandler}>
+          <div className={modalStyles.close} onClick={closeModal}>
             <CloseIcon type="primary" />
           </div>
         </div>
         <div className={modalStyles.content}>{children}</div>
       </div>
-    </div>,
-    modalRoot
+    </div>
   );
+
+  return ReactDOM.createPortal(modalElement, modalRoot);
 }
 
 Modal.propTypes = {

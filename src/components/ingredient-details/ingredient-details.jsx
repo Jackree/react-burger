@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import NutritionInfoItem from '../nutrition-info-item/nutrition-info-item';
 import ingredientDetailsStyles from './ingredient-details.module.css';
 
 function IngredientDetails({
@@ -23,54 +24,10 @@ function IngredientDetails({
         {name}
       </h3>
       <ul className={`mb-5 ${ingredientDetailsStyles.list}`}>
-        <li className={ingredientDetailsStyles.item}>
-          <p
-            className={`text text_type_main-default text_color_inactive ${ingredientDetailsStyles.item_name}`}
-          >
-            Калории, ккал
-          </p>
-          <p
-            className={`text text_type_digits-default text_color_inactive ${ingredientDetailsStyles.item_value}`}
-          >
-            {calories}
-          </p>
-        </li>
-        <li className={ingredientDetailsStyles.item}>
-          <p
-            className={`text text_type_main-default text_color_inactive ${ingredientDetailsStyles.item_name}`}
-          >
-            Белки, г
-          </p>
-          <p
-            className={`text text_type_digits-default text_color_inactive ${ingredientDetailsStyles.item_value}`}
-          >
-            {proteins}
-          </p>
-        </li>
-        <li className={ingredientDetailsStyles.item}>
-          <p
-            className={`text text_type_main-default text_color_inactive ${ingredientDetailsStyles.item_name}`}
-          >
-            Жиры, г
-          </p>
-          <p
-            className={`text text_type_digits-default text_color_inactive ${ingredientDetailsStyles.item_value}`}
-          >
-            {fat}
-          </p>
-        </li>
-        <li className={ingredientDetailsStyles.item}>
-          <p
-            className={`text text_type_main-default text_color_inactive ${ingredientDetailsStyles.item_name}`}
-          >
-            Углеводы, г
-          </p>
-          <p
-            className={`text text_type_digits-default text_color_inactive ${ingredientDetailsStyles.item_value}`}
-          >
-            {carbohydrates}
-          </p>
-        </li>
+        <NutritionInfoItem name="Калории, ккал" count={calories} />
+        <NutritionInfoItem name="Белки, г" count={proteins} />
+        <NutritionInfoItem name="Жиры, г" count={fat} />
+        <NutritionInfoItem name="Углеводы, г" count={carbohydrates} />
       </ul>
     </div>
   );
