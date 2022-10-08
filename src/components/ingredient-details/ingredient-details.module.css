@@ -1,0 +1,24 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.name {
+  text-align: center;
+}
+
+.image {
+  display: flex;
+  max-width: 480px;
+}
+
+.list {
+  display: flex;
+  justify-content: center;
+  column-gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

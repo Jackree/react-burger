@@ -12,7 +12,7 @@ function Navigation() {
         <li className={navigationStyles.item}>
           <a
             className={`text text_type_main-default pt-4 pb-4 pl-5 pr-5 mr-2 ${navigationStyles.link} ${navigationStyles.active}`}
-            href='#root'
+            href="#root"
           >
             <BurgerIcon type="primary" />
             Конструктор
@@ -21,7 +21,7 @@ function Navigation() {
         <li className={navigationStyles.item}>
           <a
             className={`text text_type_main-default pt-4 pb-4 pl-5 pr-5 ${navigationStyles.link}`}
-            href='#root'
+            href="#root"
           >
             <ListIcon type="secondary" />
             Лента заказов

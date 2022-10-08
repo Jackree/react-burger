@@ -4,16 +4,16 @@ import { ingredientPropTypes } from '../../utils/ingredientPropTypes';
 import IngredientsItem from '../ingredients-item/ingredients-item';
 import ingredientsCategoryStyles from './ingredients-category.module.css';
 
-function IngredientsCategory(props) {
+function IngredientsCategory({ title, ingredients }) {
   return (
     <div>
       <h2
         className={`text text_type_main-medium mb-6 ${ingredientsCategoryStyles.title}`}
       >
-        {props.title}
+        {title}
       </h2>
       <ul className={`${ingredientsCategoryStyles.list}`}>
-        {props.ingredients.map((item) => {
+        {ingredients.map((item) => {
           return <IngredientsItem key={item._id} {...item} />;
         })}
       </ul>
@@ -22,7 +22,8 @@ function IngredientsCategory(props) {
 }
 
 IngredientsCategory.propTypes = {
-  ingredients: PropTypes.arrayOf(ingredientPropTypes).isRequired
-}
+  title: PropTypes.string.isRequired,
+  ingredients: PropTypes.arrayOf(ingredientPropTypes).isRequired,
+};
 
 export default IngredientsCategory;

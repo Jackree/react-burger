@@ -9,7 +9,7 @@ function AppHeader() {
     <header className={`p-4 ${appHeaderStyles.header}`}>
       <div className={appHeaderStyles.container}>
         <Navigation />
-        <a className={appHeaderStyles.logo} href='#root'>
+        <a className={appHeaderStyles.logo} href="#root">
           <Logo />
         </a>
         <ProfileLink />

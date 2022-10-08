@@ -12,20 +12,20 @@ function IngredientsList(props) {
   return (
     <ul className={ingredientsListStyles.list}>
       <li className={`mb-10`}>
-        <IngredientsCategory ingredients={buns} title='Булки'/>
+        <IngredientsCategory ingredients={buns} title="Булки" />
       </li>
       <li className={`mb-10`}>
-        <IngredientsCategory ingredients={sauces} title='Соусы'/>
+        <IngredientsCategory ingredients={sauces} title="Соусы" />
       </li>
       <li>
-        <IngredientsCategory ingredients={mains} title='Начинки'/>
+        <IngredientsCategory ingredients={mains} title="Начинки" />
       </li>
     </ul>
   );
 }
 
 IngredientsList.propTypes = {
-  ingredients: PropTypes.arrayOf(ingredientPropTypes).isRequired
-}
+  ingredients: PropTypes.arrayOf(ingredientPropTypes).isRequired,
+};
 
 export default IngredientsList;
