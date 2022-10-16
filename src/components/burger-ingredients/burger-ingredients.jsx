@@ -1,11 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { ingredientPropTypes } from '../../utils/ingredientPropTypes';
 import IngredientsList from '../ingredients-list/ingredients-list';
 import IngredientsTabs from '../ingredients-tabs/ingredients-tabs';
 import burgerIngredientsStyles from './burger-ingredients.module.css';
 
-function BurgerIngredients({ ingredients }) {
+function BurgerIngredients() {
   return (
     <section className={burgerIngredientsStyles.burgerIngredients}>
       <h1
@@ -14,13 +11,9 @@ function BurgerIngredients({ ingredients }) {
         Соберите бургер
       </h1>
       <IngredientsTabs />
-      <IngredientsList ingredients={ingredients} />
+      <IngredientsList />
     </section>
   );
 }
-
-BurgerIngredients.propTypes = {
-  ingredients: PropTypes.arrayOf(ingredientPropTypes).isRequired,
-};
 
 export default BurgerIngredients;

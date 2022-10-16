@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import AppHeader from './components/app-header/app-header';
-import BurgerConstructor from './components/burger-constructor/burger-constructor';
-import BurgerIngredients from './components/burger-ingredients/burger-ingredients';
-import { getIngredients } from './utils/data';
+import AppHeader from '../app-header/app-header';
+import BurgerConstructor from '../burger-constructor/burger-constructor';
+import BurgerIngredients from '../burger-ingredients/burger-ingredients';
+import { getIngredients } from '../../utils/api';
+import { IngredientsContext } from '../../services/ingredients-context';
 
 function App() {
   const [ingredients, setIngredients] = useState([]);
@@ -28,7 +29,9 @@ function App() {
   const getContent = () => {
     if (isLoading) {
       return (
-        <p className="text text_type_main-default">Загружаем данные, пожалуйста подождите...</p>
+        <p className="text text_type_main-default">
+          Загружаем данные, пожалуйста подождите...
+        </p>
       );
     }
 
@@ -39,8 +42,10 @@ function App() {
     if (ingredients) {
       return (
         <>
-          <BurgerIngredients ingredients={ingredients} />
-          <BurgerConstructor ingredients={ingredients} />
+          <IngredientsContext.Provider value={ingredients}>
+            <BurgerIngredients />
+              <BurgerConstructor />
+          </IngredientsContext.Provider>
         </>
       );
     }
@@ -50,9 +55,7 @@ function App() {
     <div className="App">
       <AppHeader />
       <main>
-        <div className="App-container">
-          {getContent()}
-        </div>
+        <div className="App-container">{getContent()}</div>
       </main>
     </div>
   );
