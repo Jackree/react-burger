@@ -1,13 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { ingredientPropTypes } from '../../utils/ingredientPropTypes';
+import { useContext } from 'react';
 import IngredientsCategory from '../ingredients-category/ingredients-category';
 import ingredientsListStyles from './ingredients-list.module.css';
+import { IngredientsContext } from '../../services/ingredients-context';
 
-function IngredientsList(props) {
-  const buns = props.ingredients.filter((item) => item.type === 'bun');
-  const mains = props.ingredients.filter((item) => item.type === 'main');
-  const sauces = props.ingredients.filter((item) => item.type === 'sauce');
+function IngredientsList() {
+  const ingredients = useContext(IngredientsContext);
+  const buns = ingredients.filter((item) => item.type === 'bun');
+  const mains = ingredients.filter((item) => item.type === 'main');
+  const sauces = ingredients.filter((item) => item.type === 'sauce');
 
   return (
     <ul className={ingredientsListStyles.list}>
@@ -23,9 +23,5 @@ function IngredientsList(props) {
     </ul>
   );
 }
-
-IngredientsList.propTypes = {
-  ingredients: PropTypes.arrayOf(ingredientPropTypes).isRequired,
-};
 
 export default IngredientsList;
