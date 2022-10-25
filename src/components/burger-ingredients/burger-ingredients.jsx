@@ -1,8 +1,10 @@
+import { useState } from 'react';
 import IngredientsList from '../ingredients-list/ingredients-list';
 import IngredientsTabs from '../ingredients-tabs/ingredients-tabs';
 import burgerIngredientsStyles from './burger-ingredients.module.css';
 
 function BurgerIngredients() {
+  const [current, setCurrent] = useState('Булки');
   return (
     <section className={burgerIngredientsStyles.burgerIngredients}>
       <h1
@@ -10,8 +12,8 @@ function BurgerIngredients() {
       >
         Соберите бургер
       </h1>
-      <IngredientsTabs />
-      <IngredientsList />
+      <IngredientsTabs current={current}/>
+      <IngredientsList setCurrent={setCurrent}/>
     </section>
   );
 }
