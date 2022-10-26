@@ -8,7 +8,10 @@ import Modal from '../modal/modal';
 import IngredientDetails from '../ingredient-details/ingredient-details';
 import ingredientsItemStyles from './ingredients-item.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { SET_MODAL_INGREDIENT } from '../../services/actions/ingredient';
+import {
+  REMOVE_MODAL_INGREDIENT,
+  SET_MODAL_INGREDIENT,
+} from '../../services/actions/ingredient';
 import { useDrag } from 'react-dnd';
 
 function IngredientsItem({ item }) {
@@ -40,6 +43,7 @@ function IngredientsItem({ item }) {
 
   const closeModal = () => {
     setModalIsOpen(false);
+    dispatch({ type: REMOVE_MODAL_INGREDIENT });
   };
 
   return (
@@ -65,11 +69,7 @@ function IngredientsItem({ item }) {
         </p>
       </li>
       {modalIsOpen && (
-        <Modal
-          title="Детали ингредиента"
-          closeModal={closeModal}
-          modalType="ingredient"
-        >
+        <Modal title="Детали ингредиента" closeModal={closeModal}>
           <IngredientDetails />
         </Modal>
       )}

@@ -57,12 +57,12 @@ export function BurgerConstructorIngredient({ item, uid, index, moveItem }) {
   if (item.type !== 'bun') drag(drop(ref));
 
   const removeIngredient = (uid, item) => {
-    return { type: REMOVE_INGREDIENT, payload: { uid, item } }
-  }
+    return { type: REMOVE_INGREDIENT, payload: { uid, item } };
+  };
   const removeItem = (e) => {
     dispatch(removeIngredient(uid, item.item));
   };
-  
+
   return (
     <li
       className={`ml-4 ${burgerConstructorIngredientStyles.item}`}

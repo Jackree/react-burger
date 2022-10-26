@@ -1,5 +1,5 @@
 import { useEffect, useCallback } from 'react';
-import './App.css';
+import appStyles from './app.module.css';
 import AppHeader from '../app-header/app-header';
 import BurgerConstructor from '../burger-constructor/burger-constructor';
 import BurgerIngredients from '../burger-ingredients/burger-ingredients';
@@ -52,10 +52,10 @@ function App() {
   }, [dispatch]);
 
   return (
-    <div className="App">
+    <div className={appStyles.app}>
       <AppHeader />
       <main>
-        <div className="App-container">{getContent()}</div>
+        <div className={appStyles.container}>{getContent()}</div>
       </main>
     </div>
   );

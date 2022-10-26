@@ -3,7 +3,7 @@ import doneImage from '../../images/order-details/done.png';
 import { useSelector } from 'react-redux';
 
 function OrderDetails() {
-  const order = useSelector(store => store.order.order.order);
+  const order = useSelector((store) => store.order.order.order);
 
   return (
     <div className={`mb-20 ${orderDetailsStyles.content}`}>

@@ -7,7 +7,7 @@ import {
   CurrencyIcon,
   Button,
 } from '@ya.praktikum/react-developer-burger-ui-components';
-import { getOrder } from '../../services/actions/order';
+import { DELETE_ORDER_ITEM, getOrder } from '../../services/actions/order';
 import { v4 as uuidv4 } from 'uuid';
 import { useSelector, useDispatch } from 'react-redux';
 import { useDrop } from 'react-dnd';
@@ -114,6 +114,7 @@ function BurgerConstructor() {
 
   const closeModal = () => {
     setModalIsOpen(false);
+    dispatch({ type: DELETE_ORDER_ITEM });
   };
 
   return (
@@ -176,7 +177,7 @@ function BurgerConstructor() {
         </Button>
       </div>
       {modalIsOpen && order.order.order && (
-        <Modal closeModal={closeModal} modalType="order">
+        <Modal closeModal={closeModal}>
           <OrderDetails />
         </Modal>
       )}

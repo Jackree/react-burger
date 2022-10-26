@@ -12,8 +12,8 @@ function BurgerIngredients() {
       >
         Соберите бургер
       </h1>
-      <IngredientsTabs current={current}/>
-      <IngredientsList setCurrent={setCurrent}/>
+      <IngredientsTabs current={current} />
+      <IngredientsList setCurrent={setCurrent} />
     </section>
   );
 }

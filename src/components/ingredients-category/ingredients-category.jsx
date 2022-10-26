@@ -13,10 +13,10 @@ function IngredientsCategory({ title, ingredients }) {
         {title}
       </h2>
       <ul className={`${ingredientsCategoryStyles.list}`}>
-        {ingredients.length > 0 && ingredients.map((item) => {
-          return <IngredientsItem item={item} 
-          key={item._id} />;
-        })}
+        {ingredients.length > 0 &&
+          ingredients.map((item) => {
+            return <IngredientsItem item={item} key={item._id} />;
+          })}
       </ul>
     </div>
   );

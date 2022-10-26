@@ -19,7 +19,7 @@ function IngredientsTabs({ current }) {
 }
 
 IngredientsTabs.propTypes = {
-  current: PropTypes.string.isRequired
-}
+  current: PropTypes.string.isRequired,
+};
 
 export default IngredientsTabs;
