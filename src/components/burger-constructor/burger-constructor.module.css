@@ -1,5 +1,16 @@
 .section {
+  position: relative;
   width: 600px;
+}
+
+.section_hover::before {
+  position: absolute;
+  content: "";
+  top: 80px;
+  left: 0;
+  width: 50px;
+  height: 100%;
+  background: linear-gradient(90deg, #8585AD 0%, transparent 100%);
 }
 
 .list {
@@ -25,13 +36,6 @@
 .list::-webkit-scrollbar-track {
   width: 8px;
   background-color: #2F2F37;
-}
-
-
-.item {
-  display: flex;
-  align-items: center;
-  column-gap: 8px;
 }
 
 .order {

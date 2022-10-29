@@ -8,6 +8,7 @@ import modalStyles from './modal.module.css';
 const modalRoot = document.getElementById('modal');
 
 function Modal({ children, title = '', closeModal }) {
+
   useEffect(() => {
     const keyDownHandler = (e) => {
       if (e.key === 'Escape') {
@@ -20,7 +21,7 @@ function Modal({ children, title = '', closeModal }) {
     return () => {
       document.removeEventListener('keydown', keyDownHandler);
     };
-  }, [closeModal]);
+  }, []);
 
   const modalElement = (
     <div className={modalStyles.wrapper}>
